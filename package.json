@@ -1,11 +1,11 @@
 {
   "name": "employeeasisstantbot",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": " node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,11 @@
   "homepage": "https://github.com/Albert13r/EmployeeAsisstantBot#readme",
   "dependencies": {
     "node-telegram-bot-api": "^0.61.0",
-    "nodemon": "^2.0.22"
-  }
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.31.1",
+    "typeorm": "^0.3.16"
+  },
+  "description": ""
 }
