@@ -1,3 +1,5 @@
-export function welcomeMessage(){
+ function welcomeMessage(){
   return `Hello!\nMy name is Employee Management Bot\nI'll help you with your work!`
 };
+
+module.exports = welcomeMessage;

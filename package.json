@@ -2,11 +2,9 @@
   "name": "employeeasisstantbot",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +18,7 @@
   },
   "homepage": "https://github.com/Albert13r/EmployeeAsisstantBot#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "node-telegram-bot-api": "^0.61.0",
     "nodemon": "^2.0.22",
     "pg": "^8.11.0",

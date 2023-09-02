@@ -1,3 +1,3 @@
-import { start } from "./tg.service.js";
+const start = require("./tg.service");
 
 start();

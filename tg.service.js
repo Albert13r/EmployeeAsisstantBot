@@ -1,22 +1,29 @@
-import { welcomeMessage } from "./bussines.service.js"
-import pkg from 'node-telegram-bot-api';
+const welcomeMessage = require("./bussines.service");
+const pkg = require('node-telegram-bot-api');
+const employeesController = require('./employees.controller');
 
 const TelegramApi  = pkg;
 
-const token = "6271955978:AAEaBvVWWB806juiZ0NQzw4tntSEU4YpSu4";
+const token = "6271955978:AAGotmjENH-dXAQnQYgTgiHyY2GO4YPo_mQ";
 
-const bot = new TelegramApi(token, { polling: true });
+const bot = new TelegramApi(token, {polling: true});
 
-export const start = () => {
+ const start = () => {
 
   bot.setMyCommands([
     { command: "/start", description: "Welcome message" },
     { command: "/info", description: "Info about current user" },
+    {command: '/employees', description: "Show all employees"}
   ]);
 
   bot.on("message", async (msg) => {
     const text = msg.text;
     const chatId = msg.chat.id;
+
+    if (text === "/employees") {
+      const res = 'feature is still in progress...';
+      return bot.sendMessage(chatId, res);
+    }
 
     if (text === "/start") {
       await bot.sendSticker(
@@ -36,5 +43,11 @@ export const start = () => {
 
 
     return bot.sendMessage(chatId, "I don't understand you")
+    
   });
+
+
 };
+
+
+module.exports = start;
