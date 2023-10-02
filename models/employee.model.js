@@ -34,7 +34,9 @@ const DailyReport = sequelize.define("daily_report", {
     autoIncrement: true,
   },
   startWork: { type: DataTypes.DATE, allowNull: false },
-  finishWork: { type: DataTypes.DATE, allowNull: false },
+  finishWork: { type: DataTypes.DATE, allowNull: true },
+  createdAt: {type: DataTypes.DATE, autoIncrementIdentity: true, allowNull:true},
+  updatedAt: {type: DataTypes.DATE, autoIncrementIdentity: true, allowNull:true},
 });
 
 const BuildingArea = sequelize.define("building_area", {
@@ -46,12 +48,14 @@ const BuildingArea = sequelize.define("building_area", {
     autoIncrement: true,
   },
   title: { type: DataTypes.STRING, allowNull: false },
-  startBuilding: { type: DataTypes.DATE, allowNull: false },
-  finishBuilding: { type: DataTypes.DATE, allowNull: false },
-  adressCountry: { type: DataTypes.STRING, allowNull: false, unique: true },
+  startBuilding: { type: DataTypes.STRING, allowNull: false },
+  finishBuilding: { type: DataTypes.STRING, allowNull: true },
+  adressCountry: { type: DataTypes.STRING, allowNull: false},
   adressCity: { type: DataTypes.STRING, allowNull: false },
   adressStreet: { type: DataTypes.STRING, allowNull: false },
   adressHouse: { type: DataTypes.STRING, allowNull: false },
+  createdAt: {type: DataTypes.DATE, autoIncrementIdentity: true, allowNull:true},
+  updatedAt: {type: DataTypes.DATE, autoIncrementIdentity: true, allowNull:true},
 });
 
 const Customer = sequelize.define("customer", {
@@ -60,12 +64,15 @@ const Customer = sequelize.define("customer", {
     allowNull: true,
     primaryKey: true,
     unique: true,
+    autoIncrement: true
   },
   firstName: { type: DataTypes.STRING, allowNull: false },
   lastName: { type: DataTypes.STRING, allowNull: false },
   companyName: { type: DataTypes.STRING, allowNull: true },
   email: { type: DataTypes.STRING, allowNull: false, unique: true },
   phoneNumber: { type: DataTypes.STRING, allowNull: false, unique: true },
+  createdAt: {type: DataTypes.DATE, autoIncrementIdentity: true, allowNull:true},
+  updatedAt: {type: DataTypes.DATE, autoIncrementIdentity: true, allowNull:true},
 });
 
 const Admin = sequelize.define("admin", {
@@ -77,6 +84,8 @@ const Admin = sequelize.define("admin", {
   },
   email: { type: DataTypes.STRING, allowNull: false, unique: true },
   phoneNumber: { type: DataTypes.STRING, allowNull: false, unique: true },
+  createdAt: {type: DataTypes.DATE, autoIncrementIdentity: true, allowNull:true},
+  updatedAt: {type: DataTypes.DATE, autoIncrementIdentity: true, allowNull:true},
 });
 
 /// Associations
